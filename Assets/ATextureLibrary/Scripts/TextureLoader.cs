@@ -21,8 +21,7 @@ public class TextureLoader
 
 		// CREATE NEW MESH && UV
 		Vector2[] vertices2D;
-		vertices2D = new Vector2[] { new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1), new Vector2(1, 0) };
-
+		vertices2D = new Vector2[] { new Vector2(-0.5f, -0.5f), new Vector2(-0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, -0.5f) };
 		int[] triangles = new int[6] { 0, 1, 2, 0, 2, 3 };
 
 		Vector3[] vertices3D = new Vector3[vertices2D.Length];
@@ -32,10 +31,9 @@ public class TextureLoader
 		}
 
 		mesh.vertices = vertices3D;
-		mesh.uv = vertices2D;
+		mesh.uv = new Vector2[] { new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1), new Vector2(1, 0) };
 		mesh.triangles = triangles;
 		
 		go.transform.localScale = new Vector3(texRes.width, texRes.height, 1);
-		go.transform.localPosition = new Vector3(-texRes.width / 2, -texRes.height / 2, 0);
 	}
 }
